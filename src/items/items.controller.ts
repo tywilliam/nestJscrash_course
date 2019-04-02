@@ -8,23 +8,25 @@ export class ItemsController {
     findAll(): string {
         return 'GET ALL ITEMS'
     }
-
+    
     @Post() 
     create(@Body() createItemDto: CreateItemDto): string {
         return `Name: ${createItemDto.name} Desc: ${createItemDto.description}`;
     }
+
     @Get(':id')
-    findOne(@Param('id') id): string {
-        return `Item ${id}`;
+        findOne(@Param('id') id): string {
+            return `Item ${id}`;
     }
+
     @Delete(':id') 
         delete(@Param('id'), id): string {
             return `Delete ${id}`;
         }
-        @Put(':id')
+
+    @Put(':id')
         update(@Body() updateItemDto: CreateItemDto, @Param('id') id): string {
             return `Update ${id} - Name: ${updateItemDto.name}`
         }
-    }
 }
 
