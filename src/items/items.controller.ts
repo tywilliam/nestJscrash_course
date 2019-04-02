@@ -3,6 +3,9 @@ import { CreateItemDto } from './dto/create-item.dto';
 import { Request, Response } from 'express';
 @Controller('items')
 
+/**
+ * ItemController
+ */
 export class ItemsController {
     @Get() 
     findAll(): string {
